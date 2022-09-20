@@ -65,11 +65,13 @@ print(Customer_List)
 
 outfile.write('Name, Email, Phone\n')
 
-for clients in Customer_List[Full_Name]:
+i = 0
+for clients in Customer_List:
+    outfile.write(Full_Name + Email + Phone + '\n')
 
-    outfile.write(Customer_List[Full_Name] + '\n')
+    i += 1
 
 
 # close your output file
 
-    outfile.close()
+outfile.close()
