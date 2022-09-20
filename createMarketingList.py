@@ -29,6 +29,7 @@ infile = open('VendorList.csv', 'r')
 # create a csv object from the file object
 
 csvfile = csv.reader(infile, delimiter =',')
+next(csvfile)
 
 # create an output file
 
@@ -43,12 +44,17 @@ Customer_List = {}
 # iterate through the csv object
 
 for record in csvfile:
-    print()
 
+    Full_Name = (record [1] +' '+ record[2])
+    Email = (record[4])
+    Phone = (record[5])
+    print('Full Name:', Full_Name)
+    print('Email:', Email)
+    print('Phone:', Phone)
 
     # add the key-value pair to the dictionary
 
-
+    Customer_List[Full_Name] = Email, Phone
 
 # print the dictionary after the loop is finished
 
