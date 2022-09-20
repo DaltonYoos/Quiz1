@@ -52,9 +52,10 @@ for record in csvfile:
     print('Email:', Email)
     print('Phone:', Phone)
 
+    #I was considering placing an input function here, however for the purpose of populating the dictionary i did not account for user input
     # add the key-value pair to the dictionary
 
-    Customer_List[Full_Name] = Email, Phone
+    Customer_List[Full_Name] = { 'Email:': Email, 'Phone:': Phone }
 
 # print the dictionary after the loop is finished
 
@@ -62,8 +63,13 @@ print(Customer_List)
 
 # iternate through the dictionary and write to the output file
 
+outfile.write('Name, Email, Phone\n')
+
+for clients in Customer_List[Full_Name]:
+
+    outfile.write(Customer_List[Full_Name] + '\n')
 
 
 # close your output file
 
-outfile.close()
+    outfile.close()
